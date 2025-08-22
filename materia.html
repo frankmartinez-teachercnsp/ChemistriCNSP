@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Interactivo de Química</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .topic-card {
+            transition: all 0.3s ease-in-out;
+        }
+        .details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .details.show {
+            max-height: 1500px; /* Adjust as needed */
+            transition: max-height 0.7s ease-in;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-800">Fundamentos de la Química</h1>
+            <p class="text-gray-600 mt-2 text-lg">Una guía interactiva sobre la materia y sus transformaciones.</p>
+        </header>
+
+        <div class="space-y-6">
+            <!-- Estados de la Materia -->
+            <div class="topic-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6 cursor-pointer" onclick="toggleDetails(this)">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold text-blue-700">Estados de la Materia</h2>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                </div>
+                <div class="details px-6 pb-6 border-t border-gray-200">
+                    <p class="mt-4 text-gray-600">La materia existe principalmente en tres estados: sólido, líquido y gaseoso, dependiendo de la energía de sus partículas y las fuerzas entre ellas.</p>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-blue-900">Sólido</h3>
+                            <p class="mt-2 text-sm">Partículas ordenadas y vibrando en posiciones fijas. Tienen forma y volumen definidos. <strong>Ejemplo:</strong> Un cubo de hielo, una roca.</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-green-900">Líquido</h3>
+                            <p class="mt-2 text-sm">Partículas cercanas pero desordenadas, pueden deslizarse unas sobre otras. Tienen volumen definido pero adoptan la forma del recipiente. <strong>Ejemplo:</strong> Agua, aceite.</p>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-yellow-900">Gaseoso</h3>
+                            <p class="mt-2 text-sm">Partículas muy separadas y en movimiento constante. No tienen forma ni volumen definidos, se expanden para llenar el recipiente. <strong>Ejemplo:</strong> Vapor de agua, oxígeno.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Propiedades de las Sustancias -->
+            <div class="topic-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6 cursor-pointer" onclick="toggleDetails(this)">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold text-blue-700">Propiedades de las Sustancias</h2>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                </div>
+                <div class="details px-6 pb-6 border-t border-gray-200">
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Propiedades Físicas</h3>
+                            <p class="text-gray-600">Características que se pueden observar o medir sin cambiar la composición química de la sustancia.</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1 text-gray-600">
+                                <li><strong>Intensivas:</strong> No dependen de la cantidad de materia. Ej: densidad, punto de ebullición, color, dureza.</li>
+                                <li><strong>Extensivas:</strong> Sí dependen de la cantidad de materia. Ej: masa, volumen, longitud.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Propiedades Químicas</h3>
+                            <p class="text-gray-600">Describen la capacidad de una sustancia para reaccionar y formar nuevas sustancias. Ej: reactividad con el agua, inflamabilidad, acidez, poder de oxidación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cambios en la Materia -->
+            <div class="topic-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6 cursor-pointer" onclick="toggleDetails(this)">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold text-blue-700">Cambios en la Materia</h2>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                </div>
+                <div class="details px-6 pb-6 border-t border-gray-200">
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Cambios Físicos</h3>
+                            <p class="text-gray-600">Alteran la forma o el estado de la materia, pero no su composición química. Son reversibles. <strong>Ejemplo:</strong> disolver azúcar en agua, cortar papel.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Cambios Químicos (Reacciones)</h3>
+                            <p class="text-gray-600">Una o más sustancias se transforman en otras nuevas, con propiedades diferentes. Son difíciles de revertir. <strong>Ejemplo:</strong> la combustión de la madera, la oxidación del hierro.</p>
+                            <div class="mt-4 bg-gray-100 p-3 rounded-lg">
+                                <h4 class="font-bold">Ley de Conservación de la Masa</h4>
+                                <p class="text-sm">"La materia no se crea ni se destruye, solo se transforma". En una reacción química, la masa total de los reactivos es igual a la masa total de los productos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mezclas y Soluciones -->
+            <div class="topic-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6 cursor-pointer" onclick="toggleDetails(this)">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold text-blue-700">Mezclas y Soluciones</h2>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                </div>
+                <div class="details px-6 pb-6 border-t border-gray-200">
+                     <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Mezclas Homogéneas (Soluciones)</h3>
+                            <p class="text-gray-600">Sus componentes no se pueden distinguir a simple vista. Tienen una apariencia uniforme. <strong>Ejemplos:</strong> agua con sal, aire, acero.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Mezclas Heterogéneas</h3>
+                            <p class="text-gray-600">Sus componentes son visibles y se pueden diferenciar fácilmente. La composición no es uniforme. <strong>Ejemplos:</strong> agua y aceite, una ensalada, granito.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Métodos de Separación -->
+            <div class="topic-card bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6 cursor-pointer" onclick="toggleDetails(this)">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold text-blue-700">Métodos de Separación de Mezclas</h2>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                </div>
+                <div class="details px-6 pb-6 border-t border-gray-200">
+                    <p class="mt-4 text-gray-600">Técnicas físicas para separar los componentes de una mezcla sin alterar su naturaleza química.</p>
+                    <ul class="mt-4 space-y-3">
+                        <li><strong>Filtración:</strong> Separa un sólido insoluble de un líquido (arena y agua).</li>
+                        <li><strong>Destilación:</strong> Separa líquidos con diferentes puntos de ebullición (agua y alcohol).</li>
+                        <li><strong>Cristalización:</strong> Separa un soluto sólido disuelto en un líquido, evaporando el solvente (sal de agua salada).</li>
+                        <li><strong>Sublimación:</strong> Separa un sólido que puede sublimar de otro que no (yodo y sal).</li>
+                        <li><strong>Cromatografía:</strong> Separa componentes de una mezcla basándose en su diferente afinidad por una fase estacionaria y una fase móvil (separar pigmentos de la tinta).</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(element) {
+            const details = element.nextElementSibling;
+            const icon = element.querySelector('svg');
+            
+            if (details.classList.contains('show')) {
+                details.classList.remove('show');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                // Close other open cards
+                document.querySelectorAll('.details.show').forEach(openDetail => {
+                    openDetail.classList.remove('show');
+                    openDetail.previousElementSibling.querySelector('svg').style.transform = 'rotate(0deg)';
+                });
+                details.classList.add('show');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+</body>
+</html>

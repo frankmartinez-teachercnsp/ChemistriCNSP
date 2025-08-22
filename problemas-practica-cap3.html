@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación Interactiva de Química</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .active-slide {
+            display: block;
+        }
+        .answer {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-yellow-50 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Contenedor principal de la presentación -->
+    <div class="w-full max-w-3xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+        <div class="p-8 md:p-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Ejercicios de Química</h1>
+            <h2 class="text-xl text-yellow-600 mb-8">Porcentaje de Composición</h2>
+
+            <!-- Contenedor de las diapositivas -->
+            <div id="slides-container" class="relative min-h-[400px] md:min-h-[350px]">
+                
+                <!-- Helper para masas atómicas -->
+                <div class="text-xs text-gray-400 mb-4">
+                    <p>Masas Atómicas a usar: H=1, C=12, N=14, O=16, Na=23, S=32, Cl=35.5, K=39, Mn=55, Fe=56</p>
+                </div>
+
+                <!-- Diapositiva 1 -->
+                <div class="slide">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Ejercicio 1: Agua (H₂O)</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">Calcula el porcentaje de composición de Hidrógeno (H) y Oxígeno (O) en una molécula de agua.</p>
+                    <button class="toggle-answer-btn mt-6 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-2 px-4 rounded-lg transition">Mostrar Respuesta</button>
+                    <div class="answer mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <p><strong>Masa Molar de H₂O:</strong> 2(1) + 16 = 18 g/mol</p>
+                        <p><strong>% Hidrógeno:</strong> (2 / 18) * 100 = <strong>11.1%</strong></p>
+                        <p><strong>% Oxígeno:</strong> (16 / 18) * 100 = <strong>88.9%</strong></p>
+                    </div>
+                </div>
+                <!-- Diapositiva 2 -->
+                <div class="slide">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Ejercicio 2: Dióxido de Carbono (CO₂)</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">Determina el porcentaje de composición de Carbono (C) y Oxígeno (O) en el dióxido de carbono.</p>
+                    <button class="toggle-answer-btn mt-6 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-2 px-4 rounded-lg transition">Mostrar Respuesta</button>
+                    <div class="answer mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <p><strong>Masa Molar de CO₂:</strong> 12 + 2(16) = 44 g/mol</p>
+                        <p><strong>% Carbono:</strong> (12 / 44) * 100 = <strong>27.3%</strong></p>
+                        <p><strong>% Oxígeno:</strong> (32 / 44) * 100 = <strong>72.7%</strong></p>
+                    </div>
+                </div>
+                <!-- Diapositiva 3 -->
+                <div class="slide">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Ejercicio 3: Cloruro de Sodio (NaCl)</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">Calcula el porcentaje de Sodio (Na) y Cloro (Cl) en la sal de mesa común.</p>
+                    <button class="toggle-answer-btn mt-6 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-2 px-4 rounded-lg transition">Mostrar Respuesta</button>
+                    <div class="answer mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <p><strong>Masa Molar de NaCl:</strong> 23 + 35.5 = 58.5 g/mol</p>
+                        <p><strong>% Sodio:</strong> (23 / 58.5) * 100 = <strong>39.3%</strong></p>
+                        <p><strong>% Cloro:</strong> (35.5 / 58.5) * 100 = <strong>60.7%</strong></p>
+                    </div>
+                </div>
+                <!-- Diapositiva 4 -->
+                <div class="slide">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Ejercicio 4: Ácido Sulfúrico (H₂SO₄)</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">Encuentra el porcentaje en masa de cada elemento en el ácido sulfúrico.</p>
+                    <button class="toggle-answer-btn mt-6 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-2 px-4 rounded-lg transition">Mostrar Respuesta</button>
+                    <div class="answer mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <p><strong>Masa Molar de H₂SO₄:</strong> 2(1) + 32 + 4(16) = 98 g/mol</p>
+                        <p><strong>% Hidrógeno:</strong> (2 / 98) * 100 = <strong>2.0%</strong></p>
+                        <p><strong>% Azufre:</strong> (32 / 98) * 100 = <strong>32.7%</strong></p>
+                        <p><strong>% Oxígeno:</strong> (64 / 98) * 100 = <strong>65.3%</strong></p>
+                    </div>
+                </div>
+                <!-- Diapositiva 5 -->
+                <div class="slide">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Ejercicio 5: Glucosa (C₆H₁₂O₆)</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">Calcula la composición porcentual de cada elemento en la glucosa, el azúcar simple.</p>
+                    <button class="toggle-answer-btn mt-6 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-2 px-4 rounded-lg transition">Mostrar Respuesta</button>
+                    <div class="answer mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <p><strong>Masa Molar de C₆H₁₂O₆:</strong> 6(12) + 12(1) + 6(16) = 180 g/mol</p>
+                        <p><strong>% Carbono:</strong> (72 / 180) * 100 = <strong>40.0%</strong></p>
+                        <p><strong>% Hidrógeno:</strong> (12 / 180) * 100 = <strong>6.7%</strong></p>
+                        <p><strong>% Oxígeno:</strong> (96 / 180) * 100 = <strong>53.3%</strong></p>
+                    </div>
+                </div>
+                <!-- Diapositiva 6 -->
+                <div class="slide">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Ejercicio 6: Óxido de Hierro (III) (Fe₂O₃)</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">Determina el porcentaje de Hierro (Fe) y Oxígeno (O) en el óxido de hierro (III), comúnmente conocido como herrumbre.</p>
+                    <button class="toggle-answer-btn mt-6 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-2 px-4 rounded-lg transition">Mostrar Respuesta</button>
+                    <div class="answer mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <p><strong>Masa Molar de Fe₂O₃:</strong> 2(56) + 3(16) = 160 g/mol</p>
+                        <p><strong>% Hierro:</strong> (112 / 160) * 100 = <strong>70.0%</strong></p>
+                        <p><strong>% Oxígeno:</strong> (48 / 160) * 100 = <strong>30.0%</strong></p>
+                    </div>
+                </div>
+                <!-- Diapositiva 7 -->
+                <div class="slide">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Ejercicio 7: Amoníaco (NH₃)</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">Calcula la composición porcentual del Nitrógeno (N) y el Hidrógeno (H) en el amoníaco.</p>
+                    <button class="toggle-answer-btn mt-6 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-2 px-4 rounded-lg transition">Mostrar Respuesta</button>
+                    <div class="answer mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <p><strong>Masa Molar de NH₃:</strong> 14 + 3(1) = 17 g/mol</p>
+                        <p><strong>% Nitrógeno:</strong> (14 / 17) * 100 = <strong>82.4%</strong></p>
+                        <p><strong>% Hidrógeno:</strong> (3 / 17) * 100 = <strong>17.6%</strong></p>
+                    </div>
+                </div>
+                <!-- Diapositiva 8 -->
+                <div class="slide">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Ejercicio 8: Permanganato de Potasio (KMnO₄)</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">Determina el porcentaje en masa de cada elemento en el permanganato de potasio.</p>
+                    <button class="toggle-answer-btn mt-6 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-2 px-4 rounded-lg transition">Mostrar Respuesta</button>
+                    <div class="answer mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <p><strong>Masa Molar de KMnO₄:</strong> 39 + 55 + 4(16) = 158 g/mol</p>
+                        <p><strong>% Potasio:</strong> (39 / 158) * 100 = <strong>24.7%</strong></p>
+                        <p><strong>% Manganeso:</strong> (55 / 158) * 100 = <strong>34.8%</strong></p>
+                        <p><strong>% Oxígeno:</strong> (64 / 158) * 100 = <strong>40.5%</strong></p>
+                    </div>
+                </div>
+                <!-- Diapositiva 9 -->
+                <div class="slide">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Ejercicio 9: Etanol (C₂H₅OH)</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">Calcula la composición porcentual de Carbono, Hidrógeno y Oxígeno en el etanol.</p>
+                    <button class="toggle-answer-btn mt-6 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-2 px-4 rounded-lg transition">Mostrar Respuesta</button>
+                    <div class="answer mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <p><strong>Masa Molar de C₂H₆O:</strong> 2(12) + 6(1) + 16 = 46 g/mol</p>
+                        <p><strong>% Carbono:</strong> (24 / 46) * 100 = <strong>52.2%</strong></p>
+                        <p><strong>% Hidrógeno:</strong> (6 / 46) * 100 = <strong>13.0%</strong></p>
+                        <p><strong>% Oxígeno:</strong> (16 / 46) * 100 = <strong>34.8%</strong></p>
+                    </div>
+                </div>
+                <!-- Diapositiva 10 -->
+                <div class="slide">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Ejercicio 10: Bicarbonato de Sodio (NaHCO₃)</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">Encuentra el porcentaje de composición de cada elemento en el bicarbonato de sodio.</p>
+                    <button class="toggle-answer-btn mt-6 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-2 px-4 rounded-lg transition">Mostrar Respuesta</button>
+                    <div class="answer mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <p><strong>Masa Molar de NaHCO₃:</strong> 23 + 1 + 12 + 3(16) = 84 g/mol</p>
+                        <p><strong>% Sodio:</strong> (23 / 84) * 100 = <strong>27.4%</strong></p>
+                        <p><strong>% Hidrógeno:</strong> (1 / 84) * 100 = <strong>1.2%</strong></p>
+                        <p><strong>% Carbono:</strong> (12 / 84) * 100 = <strong>14.3%</strong></p>
+                        <p><strong>% Oxígeno:</strong> (48 / 84) * 100 = <strong>57.1%</strong></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Navegación -->
+            <div class="mt-8 pt-6 border-t border-gray-200 flex justify-between items-center">
+                <button id="prevBtn" class="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-5 rounded-lg transition duration-300 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                    Anterior
+                </button>
+                <div id="slide-counter" class="text-gray-600 font-medium text-sm"></div>
+                <button id="nextBtn" class="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-5 rounded-lg transition duration-300 flex items-center shadow-md">
+                    Siguiente
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const prevButton = document.getElementById('prevBtn');
+        const nextButton = document.getElementById('nextBtn');
+        const slideCounter = document.getElementById('slide-counter');
+        const answerButtons = document.querySelectorAll('.toggle-answer-btn');
+
+        function showSlide(index) {
+            // Oculta todas las diapositivas
+            slides.forEach(slide => {
+                slide.classList.remove('active-slide');
+            });
+            
+            // Muestra la diapositiva correcta
+            if (slides[index]) {
+                slides[index].classList.add('active-slide');
+            }
+
+            // Oculta todas las respuestas y resetea los botones al cambiar de diapositiva
+            document.querySelectorAll('.answer').forEach(answer => answer.style.display = 'none');
+            answerButtons.forEach(btn => btn.textContent = 'Mostrar Respuesta');
+
+            // Actualiza el contador
+            slideCounter.textContent = `Problema ${index + 1} de ${totalSlides}`;
+
+            // Habilita o deshabilita los botones de navegación
+            prevButton.disabled = index === 0;
+            nextButton.disabled = index === totalSlides - 1;
+        }
+
+        // Navegación
+        nextButton.addEventListener('click', () => {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        });
+
+        // Lógica para mostrar/ocultar respuestas
+        answerButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const isVisible = answer.style.display === 'block';
+                answer.style.display = isVisible ? 'none' : 'block';
+                button.textContent = isVisible ? 'Mostrar Respuesta' : 'Ocultar Respuesta';
+            });
+        });
+
+        // Muestra la primera diapositiva al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentSlide);
+        });
+    </script>
+
+</body>
+</html>
