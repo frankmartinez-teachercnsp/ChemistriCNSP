@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química: Estructura Atómica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #263238; /* Blue Grey */
+            --secondary-cyan: #00ACC1;
+            --accent-amber: #FFB300;
+            --light-bg: #ECEFF1;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-button.active {
+            border-color: var(--primary-dark);
+            color: var(--primary-dark);
+            background-color: white;
+        }
+        h1, h2, h3 {
+            color: var(--primary-dark);
+        }
+        .info-box {
+            background-color: white;
+            border-left: 4px solid var(--secondary-cyan);
+            color: #37474F;
+        }
+    </style>
+    <script>
+        function changeTab(event, tabId) {
+            const tabElement = document.getElementById(tabId);
+            if (tabElement) {
+                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
+                tabElement.classList.add('active');
+                event.currentTarget.classList.add('active');
+            }
+        }
+        window.onload = () => {
+             const firstTabButton = document.querySelector('.tab-button');
+             if(firstTabButton){
+                firstTabButton.click();
+             }
+        };
+    </script>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold">Explorando la Estructura Atómica</h1>
+            <p class="mt-2 text-lg text-gray-600">Un viaje al corazón de la materia.</p>
+        </header>
+
+        <!-- Pestañas de Navegación -->
+        <div class="mb-8 border-b border-gray-300">
+            <nav class="flex flex-wrap -mb-px" aria-label="Tabs">
+                <button class="tab-button active text-md font-medium mr-2 text-center py-3 px-2 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" onclick="changeTab(event, 'particulas')">Partículas Subatómicas</button>
+                <button class="tab-button text-md font-medium mr-2 text-center py-3 px-2 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" onclick="changeTab(event, 'modelos')">Modelos Atómicos</button>
+                <button class="tab-button text-md font-medium mr-2 text-center py-3 px-2 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" onclick="changeTab(event, 'isotopos')">Isótopos y Radiación</button>
+            </nav>
+        </div>
+
+        <main>
+            <!-- 1. Partículas Subatómicas y sus Descubrimientos -->
+            <div id="particulas" class="tab-content active">
+                <section class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4">Los Ladrillos del Átomo</h2>
+                    <p class="mb-6">El átomo está compuesto por un núcleo central denso y una región circundante de electrones. El núcleo contiene protones y neutrones.</p>
+                    <div class="space-y-6">
+                        <!-- Electrón -->
+                        <div class="info-box p-4 rounded-r-lg">
+                            <h3 class="font-bold text-lg mb-2">Electrón (e⁻)</h3>
+                            <p><strong>Carga:</strong> Negativa (-1). <strong>Masa:</strong> Muy pequeña (~1/1836 uma).</p>
+                            <p class="mt-2"><strong>Descubrimiento:</strong> J.J. Thomson en 1897, utilizando un tubo de rayos catódicos. Observó que los rayos (partículas) se desviaban hacia un campo eléctrico positivo, demostrando que tenían carga negativa.</p>
+                        </div>
+                        <!-- Protón -->
+                        <div class="info-box p-4 rounded-r-lg">
+                            <h3 class="font-bold text-lg mb-2">Protón (p⁺)</h3>
+                            <p><strong>Carga:</strong> Positiva (+1). <strong>Masa:</strong> ~1 unidad de masa atómica (uma).</p>
+                            <p class="mt-2"><strong>Descubrimiento:</strong> Ernest Rutherford en 1919. En su famoso experimento de la lámina de oro, bombardeó una fina lámina de oro con partículas alfa. La mayoría pasaron, pero algunas se desviaron drásticamente, lo que le llevó a proponer un núcleo pequeño, denso y con carga positiva.</p>
+                        </div>
+                        <!-- Neutrón -->
+                        <div class="info-box p-4 rounded-r-lg">
+                            <h3 class="font-bold text-lg mb-2">Neutrón (n⁰)</h3>
+                            <p><strong>Carga:</strong> Neutra (0). <strong>Masa:</strong> ~1 unidad de masa atómica (uma).</p>
+                            <p class="mt-2"><strong>Descubrimiento:</strong> James Chadwick en 1932. Bombardeó berilio con partículas alfa y detectó una radiación sin carga pero con una masa similar a la del protón. Su neutralidad hizo que fuera la última partícula fundamental en ser descubierta.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 2. Modelos Atómicos -->
+            <div id="modelos" class="tab-content">
+                 <section class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4">La Evolución de una Idea</h2>
+                    <p class="mb-6">Nuestra comprensión del átomo ha evolucionado a través de varios modelos a lo largo del tiempo, cada uno construido sobre el anterior.</p>
+                    <ul class="list-disc list-inside pl-4 space-y-4">
+                        <li><strong>Modelo de Dalton (1808):</strong> Imaginó el átomo como una esfera sólida e indivisible, como una bola de billar.</li>
+                        <li><strong>Modelo de Thomson (1904):</strong> Tras descubrir el electrón, propuso el modelo del "pudín de pasas", con electrones negativos incrustados en una esfera de carga positiva.</li>
+                        <li><strong>Modelo de Rutherford (1911):</strong> Basado en su experimento, propuso un modelo nuclear con un núcleo positivo y denso, y electrones orbitando a su alrededor, como planetas.</li>
+                        <li><strong>Modelo de Bohr (1913):</strong> Mejoró el modelo de Rutherford al proponer que los electrones solo pueden existir en órbitas o niveles de energía específicos y definidos.</li>
+                        <li><strong>Modelo Cuántico-Mecánico (Actual):</strong> Describe a los electrones no en órbitas, sino en "nubes de probabilidad" u orbitales, regiones donde es más probable encontrarlos.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- 3. Isótopos y Radiación -->
+            <div id="isotopos" class="tab-content">
+                 <section class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4">Variaciones y Estabilidad Nuclear</h2>
+                    <h3 class="font-bold text-lg mb-2">Isótopos</h3>
+                    <p class="mb-4">Los <strong>isótopos</strong> son átomos del mismo elemento (mismo número de protones) pero con un número diferente de neutrones. Esto significa que tienen el mismo número atómico (Z) pero diferente número de masa (A).</p>
+                    <p class="mb-6"><strong>Ejemplo:</strong> El carbono siempre tiene 6 protones. Sin embargo, puede existir como Carbono-12 (6 neutrones), Carbono-13 (7 neutrones) o el inestable Carbono-14 (8 neutrones).</p>
+                    
+                    <h3 class="font-bold text-lg mb-2" style="color: var(--accent-amber);">Desintegración Nuclear y Radiación</h3>
+                    <p class="mb-4">Algunos isótopos tienen núcleos inestables (son radiactivos). Para alcanzar la estabilidad, se desintegran, emitiendo energía y/o partículas en un proceso llamado <strong>desintegración nuclear</strong>. La energía y partículas emitidas se conocen como <strong>radiación</strong>.</p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="border p-4 rounded-lg">
+                            <h4 class="font-bold text-center">Radiación Alfa (α)</h4>
+                            <p>Consiste en un núcleo de Helio (2 protones, 2 neutrones). Tiene una carga positiva y es detenida fácilmente por una hoja de papel.</p>
+                        </div>
+                        <div class="border p-4 rounded-lg">
+                            <h4 class="font-bold text-center">Radiación Beta (β)</h4>
+                            <p>Consiste en un electrón de alta velocidad emitido desde el núcleo. Es más penetrante que la alfa y puede ser detenida por una lámina de aluminio.</p>
+                        </div>
+                        <div class="border p-4 rounded-lg">
+                            <h4 class="font-bold text-center">Radiación Gamma (γ)</h4>
+                            <p>Es radiación electromagnética de alta energía (similar a los rayos X). No tiene masa ni carga. Es muy penetrante y se necesita plomo o concreto grueso para detenerla.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
