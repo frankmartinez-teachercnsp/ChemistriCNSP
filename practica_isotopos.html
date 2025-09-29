@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Práctica: Isótopos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1E3A8A; /* blue-800 */
+            --secondary-gray: #4B5563; /* gray-600 */
+            --light-bg: #F9FAFB; /* gray-50 */
+            --solution-bg: #E0E7FF; /* indigo-100 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+        }
+        .solution { display: none; }
+        .problem-box {
+            background-color: white;
+            border-left: 4px solid var(--primary-blue);
+        }
+         .solution-box {
+            background-color: var(--solution-bg);
+            border: 1px solid #C7D2FE; /* indigo-200 */
+        }
+    </style>
+    <script>
+        function toggleSolution(id) {
+            const solutionElement = document.getElementById(id);
+            if (solutionElement) {
+                const button = solutionElement.previousElementSibling;
+                if (solutionElement.style.display === 'block') {
+                    solutionElement.style.display = 'none';
+                    button.textContent = 'Mostrar Solución';
+                } else {
+                    solutionElement.style.display = 'block';
+                    button.textContent = 'Ocultar Solución';
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold" style="color: var(--primary-blue);">Práctica de Isótopos</h1>
+            <p class="mt-2 text-lg text-gray-600">Calcula el número de partículas subatómicas para los siguientes átomos neutros.</p>
+        </header>
+
+        <main class="space-y-6">
+            <!-- Ejercicio de Ejemplo -->
+            <div class="problem-box p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Ejemplo: Carbono-14 (¹⁴C)</h2>
+                <p class="mb-4">Determina el número de protones, neutrones y electrones en un átomo neutro de <strong>Carbono-14</strong>.</p>
+                <button onclick="toggleSolution('sol-ejemplo')" class="bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition-colors">Mostrar Solución</button>
+                <div id="sol-ejemplo" class="solution mt-4 p-4 rounded-lg solution-box">
+                    <h3 class="font-bold text-lg mb-2">Desglose de la Solución:</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Protones:</strong> El número atómico (Z) del Carbono es 6. Tiene <strong>6 protones</strong>.</li>
+                        <li><strong>Electrones:</strong> Al ser neutro, el número de electrones es igual al de protones. Tiene <strong>6 electrones</strong>.</li>
+                        <li><strong>Neutrones:</strong> Número de masa (A) - Protones = 14 - 6 = <strong>8 neutrones</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ejercicio 1 -->
+            <div class="problem-box p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Ejercicio 1: Hidrógeno-3 (³H, Tritio)</h2>
+                <button onclick="toggleSolution('sol-1')" class="bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition-colors">Mostrar Solución</button>
+                <div id="sol-1" class="solution mt-4 p-4 rounded-lg solution-box">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Protones:</strong> <strong>1</strong> (Z de H es 1)</li>
+                        <li><strong>Electrones:</strong> <strong>1</strong></li>
+                        <li><strong>Neutrones:</strong> 3 - 1 = <strong>2</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ejercicio 2 -->
+            <div class="problem-box p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Ejercicio 2: Helio-4 (⁴He)</h2>
+                <button onclick="toggleSolution('sol-2')" class="bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition-colors">Mostrar Solución</button>
+                <div id="sol-2" class="solution mt-4 p-4 rounded-lg solution-box">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Protones:</strong> <strong>2</strong> (Z de He es 2)</li>
+                        <li><strong>Electrones:</strong> <strong>2</strong></li>
+                        <li><strong>Neutrones:</strong> 4 - 2 = <strong>2</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ejercicio 3 -->
+            <div class="problem-box p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Ejercicio 3: Litio-7 (⁷Li)</h2>
+                <button onclick="toggleSolution('sol-3')" class="bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition-colors">Mostrar Solución</button>
+                <div id="sol-3" class="solution mt-4 p-4 rounded-lg solution-box">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Protones:</strong> <strong>3</strong> (Z de Li es 3)</li>
+                        <li><strong>Electrones:</strong> <strong>3</strong></li>
+                        <li><strong>Neutrones:</strong> 7 - 3 = <strong>4</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ejercicio 4 -->
+            <div class="problem-box p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Ejercicio 4: Oxígeno-18 (¹⁸O)</h2>
+                <button onclick="toggleSolution('sol-4')" class="bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition-colors">Mostrar Solución</button>
+                <div id="sol-4" class="solution mt-4 p-4 rounded-lg solution-box">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Protones:</strong> <strong>8</strong> (Z de O es 8)</li>
+                        <li><strong>Electrones:</strong> <strong>8</strong></li>
+                        <li><strong>Neutrones:</strong> 18 - 8 = <strong>10</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ejercicio 5 -->
+            <div class="problem-box p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Ejercicio 5: Sodio-23 (²³Na)</h2>
+                <button onclick="toggleSolution('sol-5')" class="bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition-colors">Mostrar Solución</button>
+                <div id="sol-5" class="solution mt-4 p-4 rounded-lg solution-box">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Protones:</strong> <strong>11</strong> (Z de Na es 11)</li>
+                        <li><strong>Electrones:</strong> <strong>11</strong></li>
+                        <li><strong>Neutrones:</strong> 23 - 11 = <strong>12</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ejercicio 6 -->
+            <div class="problem-box p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Ejercicio 6: Aluminio-27 (²⁷Al)</h2>
+                <button onclick="toggleSolution('sol-6')" class="bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition-colors">Mostrar Solución</button>
+                <div id="sol-6" class="solution mt-4 p-4 rounded-lg solution-box">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Protones:</strong> <strong>13</strong> (Z de Al es 13)</li>
+                        <li><strong>Electrones:</strong> <strong>13</strong></li>
+                        <li><strong>Neutrones:</strong> 27 - 13 = <strong>14</strong></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Ejercicio 7 -->
+            <div class="problem-box p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Ejercicio 7: Fósforo-32 (³²P)</h2>
+                <button onclick="toggleSolution('sol-7')" class="bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition-colors">Mostrar Solución</button>
+                <div id="sol-7" class="solution mt-4 p-4 rounded-lg solution-box">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Protones:</strong> <strong>15</strong> (Z de P es 15)</li>
+                        <li><strong>Electrones:</strong> <strong>15</strong></li>
+                        <li><strong>Neutrones:</strong> 32 - 15 = <strong>17</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ejercicio 8 -->
+            <div class="problem-box p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Ejercicio 8: Cloro-37 (³⁷Cl)</h2>
+                <button onclick="toggleSolution('sol-8')" class="bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition-colors">Mostrar Solución</button>
+                <div id="sol-8" class="solution mt-4 p-4 rounded-lg solution-box">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Protones:</strong> <strong>17</strong> (Z de Cl es 17)</li>
+                        <li><strong>Electrones:</strong> <strong>17</strong></li>
+                        <li><strong>Neutrones:</strong> 37 - 17 = <strong>20</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ejercicio 9 -->
+            <div class="problem-box p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Ejercicio 9: Potasio-40 (⁴⁰K)</h2>
+                <button onclick="toggleSolution('sol-9')" class="bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition-colors">Mostrar Solución</button>
+                <div id="sol-9" class="solution mt-4 p-4 rounded-lg solution-box">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Protones:</strong> <strong>19</strong> (Z de K es 19)</li>
+                        <li><strong>Electrones:</strong> <strong>19</strong></li>
+                        <li><strong>Neutrones:</strong> 40 - 19 = <strong>21</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ejercicio 10 -->
+            <div class="problem-box p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-4">Ejercicio 10: Hierro-56 (⁵⁶Fe)</h2>
+                <button onclick="toggleSolution('sol-10')" class="bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition-colors">Mostrar Solución</button>
+                <div id="sol-10" class="solution mt-4 p-4 rounded-lg solution-box">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Protones:</strong> <strong>26</strong> (Z de Fe es 26)</li>
+                        <li><strong>Electrones:</strong> <strong>26</strong></li>
+                        <li><strong>Neutrones:</strong> 56 - 26 = <strong>30</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
+
