@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química: Electrones en los Átomos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: #4C1D95; /* violet-900 */
+            --light-purple-bg: #F5F3FF; /* violet-50 */
+            --accent-purple: #8B5CF6; /* violet-500 */
+            --text-color: #374151; /* gray-700 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-purple-bg);
+            color: var(--text-color);
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .tab-button.active {
+            color: var(--primary-purple);
+            font-weight: 600;
+            border-bottom-color: var(--accent-purple);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .formula {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            background-color: #EDE9FE; /* violet-100 */
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: var(--primary-purple);
+        }
+        h1, h2, h3 { color: var(--primary-purple); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold">El Mundo Cuántico: Electrones en los Átomos</h1>
+            <p class="mt-2 text-lg text-gray-600">Desde la luz hasta la configuración electrónica.</p>
+        </header>
+
+        <!-- Pestañas de Navegación -->
+        <div class="border-b border-gray-300 mb-6">
+            <nav class="flex flex-wrap -mb-px justify-center" aria-label="Tabs">
+                <button onclick="changeTab(event, 'espectro')" class="tab-button active text-lg py-4 px-6">Espectro Electromagnético</button>
+                <button onclick="changeTab(event, 'cuantica')" class="tab-button text-lg py-4 px-6">Teoría Cuántica</button>
+                <button onclick="changeTab(event, 'configuracion')" class="tab-button text-lg py-4 px-6">Configuración Electrónica</button>
+            </nav>
+        </div>
+
+        <!-- Contenido de las Pestañas -->
+        <main>
+            <!-- Contenido 1: Espectro Electromagnético -->
+            <div id="espectro" class="tab-content active animate-fade-in">
+                <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
+                    <h2 class="text-2xl font-bold border-b pb-2">Naturaleza de la Luz</h2>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Radiación Electromagnética</h3>
+                        <p>Es una forma de energía que se propaga a través del espacio. Incluye la luz visible, las ondas de radio, los rayos X, y más. Todas estas formas de radiación viajan a la velocidad de la luz.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Definición de una Onda</h3>
+                        <p>La radiación electromagnética se comporta como una onda, caracterizada por:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1 pl-4">
+                            <li><strong>Longitud de onda (λ - lambda):</strong> La distancia entre dos crestas o valles consecutivos.</li>
+                            <li><strong>Frecuencia (ν - nu):</strong> El número de ondas que pasan por un punto en un segundo. Se mide en Hertz (Hz).</li>
+                            <li><strong>Amplitud:</strong> La altura de la onda desde el origen hasta una cresta.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Relación con la Velocidad de la Luz</h3>
+                        <p>La longitud de onda y la frecuencia están inversamente relacionadas a través de la velocidad de la luz (<span class="font-bold">c</span>), una constante universal (<span class="formula">~3.00 x 10⁸ m/s</span>).</p>
+                        <div class="mt-4 text-center text-xl p-4 bg-violet-100 rounded-lg">
+                            <span class="formula">c = λ * ν</span>
+                        </div>
+                        <p class="mt-2 text-center text-sm text-gray-600">Esto significa que si la longitud de onda es larga, la frecuencia es baja, y viceversa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido 2: Teoría Cuántica -->
+            <div id="cuantica" class="tab-content animate-fade-in">
+                <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
+                    <h2 class="text-2xl font-bold border-b pb-2">La Energía se Cuantiza</h2>
+
+                     <div>
+                        <h3 class="text-xl font-semibold mb-2">Quantum y Fotones</h3>
+                        <p>Max Planck propuso que la energía no se emite de forma continua, sino en pequeños paquetes llamados <span class="font-bold">quantums</span>. Albert Einstein expandió esta idea, proponiendo que la luz misma está compuesta de partículas de energía llamadas <span class="font-bold">fotones</span>.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Energía de un Fotón</h3>
+                        <p>La energía de un fotón es directamente proporcional a su frecuencia. La relación se describe con la constante de Planck (<span class="font-bold">h</span>).</p>
+                        <div class="mt-4 text-center text-xl p-4 bg-violet-100 rounded-lg">
+                            <span class="formula">E = h * ν</span>
+                        </div>
+                        <p class="mt-2 text-center text-sm text-gray-600">donde <span class="formula">h ≈ 6.626 x 10⁻³⁴ J·s</span>.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Efecto Fotoeléctrico</h3>
+                        <p>Es la emisión de electrones de un metal cuando la luz incide sobre él. Este efecto demuestra la naturaleza corpuscular de la luz: solo los fotones con una frecuencia (y energía) mínima pueden arrancar electrones, sin importar la intensidad de la luz.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Espectro de Emisión Atómica y Estado Basal</h3>
+                        <p>Cuando un átomo absorbe energía, sus electrones saltan a niveles de energía más altos (estado excitado). Al regresar a su nivel de energía original (<span class="font-bold">estado basal</span>), emiten esa energía en forma de fotones con longitudes de onda específicas. El conjunto de estas longitudes de onda forma el <span class="font-bold">espectro de emisión atómica</span>, que es único para cada elemento, como una huella dactilar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido 3: Configuración Electrónica -->
+            <div id="configuracion" class="tab-content animate-fade-in">
+                <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
+                    <h2 class="text-2xl font-bold border-b pb-2">Organización de los Electrones</h2>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Subniveles y Orbitales Atómicos</h3>
+                        <p>Los electrones no orbitan el núcleo como planetas. Se encuentran en regiones de probabilidad llamadas <span class="font-bold">orbitales atómicos</span>, que tienen formas y tamaños específicos. Estos orbitales se agrupan en <span class="font-bold">subniveles</span>:</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1 pl-4">
+                            <li><strong>Subnivel s:</strong> Tiene 1 orbital esférico (aloja 2 e⁻).</li>
+                            <li><strong>Subnivel p:</strong> Tiene 3 orbitales en forma de lóbulo (aloja 6 e⁻).</li>
+                            <li><strong>Subnivel d:</strong> Tiene 5 orbitales complejos (aloja 10 e⁻).</li>
+                            <li><strong>Subnivel f:</strong> Tiene 7 orbitales aún más complejos (aloja 14 e⁻).</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Configuración Electrónica</h3>
+                        <p>Es la distribución de los electrones de un átomo en sus diferentes orbitales. Se basa en tres reglas:</p>
+                         <ul class="list-disc list-inside mt-2 space-y-1 pl-4">
+                            <li><strong>Principio de Aufbau:</strong> Los electrones llenan primero los orbitales de menor energía.</li>
+                            <li><strong>Principio de Exclusión de Pauli:</strong> Un orbital puede tener como máximo dos electrones, y deben tener espines opuestos.</li>
+                            <li><strong>Regla de Hund:</strong> Los electrones ocupan orbitales del mismo subnivel de forma individual antes de aparearse.</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Notación de Configuración Electrónica</h3>
+                        <p>Muestra cómo se distribuyen los electrones. Por ejemplo, para el Oxígeno (O, 8 electrones):</p>
+                        <div class="mt-2 p-3 bg-violet-100 rounded-lg text-center font-mono text-lg">1s² 2s² 2p⁴</div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Notación de Gas Noble</h3>
+                        <p>Es una forma abreviada que utiliza la configuración del gas noble anterior en la tabla periódica. Para el Sodio (Na, 11 electrones), el gas noble anterior es el Neón (Ne).</p>
+                        <div class="mt-2 p-3 bg-violet-100 rounded-lg text-center font-mono text-lg">[Ne] 3s¹</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function changeTab(event, tabId) {
+            // Ocultar todo el contenido de las pestañas
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Desactivar todos los botones de las pestañas
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Mostrar el contenido de la pestaña seleccionada y activar el botón
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // Activar la primera pestaña por defecto
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.tab-button').click();
+        });
+    </script>
+
+</body>
+</html>
