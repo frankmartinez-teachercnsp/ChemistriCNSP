@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compuestos Iónicos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --ion-blue: #2563eb;
+            --ion-orange: #f97316;
+            --bg-gray: #f8fafc;
+        }
+        body {
+            background-color: var(--bg-gray);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .atom-card {
+            transition: transform 0.3s ease;
+        }
+        .atom-card:hover {
+            transform: translateY(-5px);
+        }
+        .cation { color: var(--ion-blue); border-color: var(--ion-blue); }
+        .anion { color: var(--ion-orange); border-color: var(--ion-orange); }
+        .formula-box {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+
+    <div class="max-w-4xl mx-auto">
+        <header class="mb-10 text-center">
+            <h1 class="text-4xl font-extrabold text-slate-800">Compuestos Iónicos</h1>
+            <p class="text-slate-600 mt-2 text-lg">La fuerza de la atracción electrostática</p>
+        </header>
+
+        <!-- Sección 1: ¿Qué son los Iones? -->
+        <section class="grid md:grid-cols-2 gap-6 mb-10">
+            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-blue-600 atom-card">
+                <h2 class="text-2xl font-bold mb-3 text-blue-700">Cationes (+)</h2>
+                <p class="text-slate-700">Se forman cuando un átomo neutro <strong>pierde electrones</strong>. Al tener más protones que electrones, adquiere una carga positiva.</p>
+                <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                    <li>• Generalmente son metales.</li>
+		    <li>• Ejemplo: Na &#8594 Na<sup>+</sup> + e<sup>-</sup></li>
+                    <li>• Atracción por el cátodo.</li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-orange-500 atom-card">
+                <h2 class="text-2xl font-bold mb-3 text-orange-600">Aniones (-)</h2>
+                <p class="text-slate-700">Se forman cuando un átomo neutro <strong>gana electrones</strong>. Al tener más electrones que protones, adquiere una carga negativa.</p>
+                <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                    <li>• Generalmente son no metales.</li>
+		    <li>• Ejemplo: Cl + e<sup>-</sup> &#8594 Cl<sup>-</sup></li>
+                    <li>• Atracción por el ánodo.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 2: Carga Eléctrica -->
+        <section class="bg-white p-8 rounded-xl shadow-md mb-10">
+            <h2 class="text-2xl font-bold text-slate-800 mb-4 border-b pb-2">Carga Eléctrica en los Átomos</h2>
+            <p class="text-slate-700 leading-relaxed">
+                La carga neta de un átomo se define por la relación entre sus partículas subatómicas:
+            </p>
+            <div class="flex justify-center my-6">
+                <div class="bg-slate-100 p-4 rounded-lg text-center font-bold text-xl border-2 border-slate-300">
+                    Carga = (Nº Protones) - (Nº Electrones)
+                </div>
+            </div>
+            <p class="text-slate-700 italic bg-blue-50 p-4 rounded-md">
+                <strong>Regla del Octeto:</strong> Los átomos tienden a ganar o perder electrones para alcanzar una configuración estable de 8 electrones en su capa de valencia, similar a los gases nobles.
+            </p>
+        </section>
+
+        <!-- Sección 3: Disolución de Iones (Reacción) -->
+        <section class="bg-white p-8 rounded-xl shadow-md">
+            <h2 class="text-2xl font-bold text-slate-800 mb-4">Reacción de Disolución</h2>
+            <p class="text-slate-700 mb-6">
+                Cuando un compuesto iónico sólido (como la sal de mesa) entra en contacto con agua, las moléculas de agua rodean los iones y rompen el enlace iónico, separándolos. Esto se llama <strong>disociación electrolítica</strong>.
+            </p>
+            
+            <div class="formula-box mb-6 text-center">
+		    <span class="text-blue-400">NaCl</span> <sub>(s)</sub> &#8594 <span class="text-blue-300">Na<sup>+</sup></span> <sub>(aq)</sub> + <span class="text-orange-300">Cl<sup>-</sup></span> <sub>(aq)</sub>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="font-bold text-slate-800">Partes de la reacción:</h3>
+                <ul class="list-disc list-inside text-slate-600 ml-4">
+                    <li><strong>Soluto Sólido:</strong> Red cristalina organizada de iones.</li>
+                    <li><strong>Solvente (Agua):</strong> Molécula polar que debilita las fuerzas electrostáticas.</li>
+                    <li><strong>Iones Acuosos (aq):</strong> Iones libres rodeados por una "capa de hidratación".</li>
+                </ul>
+            </div>
+
+            <!-- Visualización conceptual simple -->
+            <div class="mt-8 p-6 bg-blue-50 rounded-lg border-2 border-dashed border-blue-200 text-center">
+                <p class="text-sm font-semibold text-blue-800 mb-4 uppercase">Representación de la Disociación</p>
+                <div class="flex justify-center items-center gap-4">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg animate-pulse">Na+</div>
+                    <div class="w-12 h-1 bg-slate-300"></div>
+                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg animate-pulse">Cl-</div>
+                </div>
+                <p class="mt-4 text-xs text-slate-500">Los iones se separan y se vuelven conductores de electricidad.</p>
+            </div>
+        </section>
+
+        <footer class="mt-10 text-center text-slate-400 text-sm">
+            <p>Química General • Iones y Enlaces</p>
+        </footer>
+    </div>
+
+</body>
+</html>
