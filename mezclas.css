@@ -1,0 +1,103 @@
+/* Estilos Generales */
+body {
+    background-color: #E3F2FD; /* Azul claro suave */
+    color: #0D47A1; /* Azul oscuro */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Encabezado */
+header {
+    background-color: #1565C0; /* Azul principal */
+    color: #FFEB3B; /* Amarillo brillante */
+    padding: 2rem 1rem;
+    border-bottom: 5px solid #FFEB3B;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+header p {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    color: #FFFFFF;
+}
+
+/* Contenido Principal */
+main {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.topic-group {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+main h2 {
+    color: #1565C0;
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid #FFE082;
+    padding-bottom: 0.5rem;
+}
+
+/* Listas y Botones */
+.chapter-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chapter-list li {
+    margin: 0.8rem 0;
+}
+
+/* Cuadrícula para la sección de tipos de soluciones */
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
+}
+
+.grid-list li {
+    margin: 0;
+}
+
+/* Botones Interactivos */
+.chapter-list a {
+    display: block;
+    background-color: #1E88E5; /* Azul intermedio */
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Efecto al pasar el cursor (Hover) */
+.chapter-list a:hover {
+    background-color: #0D47A1; /* Azul más oscuro */
+    color: #FFEB3B; /* Texto amarillo */
+    transform: translateY(-3px);
+}
+
+/* Pie de página */
+footer {
+    padding: 1.2rem;
+    background-color: #1565C0;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+}

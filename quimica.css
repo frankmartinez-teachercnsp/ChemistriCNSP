@@ -1,0 +1,17 @@
+/* Botón para regresar a mezclas.html */
+.btn-back {
+    display: inline-block;
+    background-color: #FFEB3B; /* Amarillo */
+    color: #0D47A1; /* Texto Azul */
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-back:hover {
+    background-color: #FFE082;
+    transform: translateY(-2px);
+}
